@@ -1,10 +1,11 @@
 package com.sukumar.bookmyshow.userlogin;
 
+import com.sukumar.bookmyshow.userconsole.UserConsoleView;
 import com.sukumar.bookmyshow.util.ScannerUtil;
 
 public class UserLoginView {
     UserLoginModel userLoginModel;
-    public UserLoginView(){
+    public UserLoginView(String userName){
         userLoginModel = new UserLoginModel(this);
     }
 
@@ -25,7 +26,10 @@ public class UserLoginView {
         getUserInfo();
     }
 
-    public void onSuccessLogin() {
+    public void onSuccessLogin(String userName) {
         System.out.println("Login success!");
+        new UserConsoleView(userName).init(userName);
     }
+
+
 }

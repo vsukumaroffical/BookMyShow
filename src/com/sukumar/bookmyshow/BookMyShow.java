@@ -5,6 +5,7 @@ public class BookMyShow {
     private static BookMyShow instance;
 
     private BookMyShow() {
+
     }
 
     static BookMyShow getInstance() {
@@ -24,4 +25,5 @@ public class BookMyShow {
         System.out.println("Version: " + getInstance().getAppVersion());
         new LoginView().showLoginOptions();
     }
+
 }

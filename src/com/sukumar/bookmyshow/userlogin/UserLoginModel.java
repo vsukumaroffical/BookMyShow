@@ -2,7 +2,7 @@ package com.sukumar.bookmyshow.userlogin;
 
 import com.sukumar.bookmyshow.bookmyshowrepository.BookMyShowRepository;
 import com.sukumar.bookmyshow.dto.User;
-import com.sukumar.bookmyshow.registor.RegisterView;
+import com.sukumar.bookmyshow.register.RegisterView;
 
 class UserLoginModel {
     UserLoginView userLoginView;
@@ -11,7 +11,7 @@ class UserLoginModel {
     }
 
     void authenticate(String userName,String password){
-        User user = BookMyShowRepository.getInstance().getUser(userName);
+       User user = BookMyShowRepository.getInstance().getUser(userName);
 
         if(user == null) {
             System.out.println("User does not exist. Please register first.");
@@ -24,7 +24,7 @@ class UserLoginModel {
         }else if(!user.getPassword().equals(password)){
             userLoginView.onFailedLogin("Invalid Password");
         }else{
-            userLoginView.onSuccessLogin();
+            userLoginView.onSuccessLogin(userName);
         }
     }
 

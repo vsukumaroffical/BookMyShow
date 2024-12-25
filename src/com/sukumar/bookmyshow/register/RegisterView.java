@@ -1,4 +1,4 @@
-package com.sukumar.bookmyshow.registor;
+package com.sukumar.bookmyshow.register;
 
 import com.sukumar.bookmyshow.account.AccountView;
 import com.sukumar.bookmyshow.dto.User;

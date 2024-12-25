@@ -1,31 +1,26 @@
 package com.sukumar.bookmyshow.dto;
 
 public class Seat {
-    private byte seatId;
-    private String seatNumber;
-    private boolean isAvailable;
+    private String seatNumber; // e.g., "A1", "B2"
+    private boolean isAvailable; // true if the seat is available, false if booked
 
-    public byte getSeatId() {
-        return seatId;
+    // Constructor
+    public Seat() {
+
     }
 
-    public void setSeatId(byte seatId) {
-        this.seatId = seatId;
-    }
-
+    // Getter for seat number
     public String getSeatNumber() {
         return seatNumber;
     }
 
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
-    }
-
+    // Getter for availability status
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    // Setter for availability status (optional, if you need to update it)
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }

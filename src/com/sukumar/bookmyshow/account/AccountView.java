@@ -1,7 +1,6 @@
 package com.sukumar.bookmyshow.account;
 
 import com.sukumar.bookmyshow.dto.Account;
-import com.sukumar.bookmyshow.userconsole.UserConsoleView;
 import com.sukumar.bookmyshow.userlogin.UserLoginView;
 import com.sukumar.bookmyshow.util.ScannerUtil;
 
@@ -13,7 +12,11 @@ public class AccountView {
 
     void onSuccessAddAccount(String userName){
         System.out.println("Congratulations " + userName + "! Your account has been added successfully.");
-        new UserLoginView().getUserInfo();
+
+        new UserLoginView(userName).getUserInfo();
+    }
+    void onSuccessAdminAccount(){
+        System.out.println("Congratulations admin! Your account has been added successfully.");
     }
 
     void onFailedAddAccount(String userName){
@@ -31,5 +34,6 @@ public class AccountView {
         account.setBankName(ScannerUtil.getInstance().getString());
         model.addAccount(account,userName);
     }
+
 
 }

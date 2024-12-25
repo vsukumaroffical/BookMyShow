@@ -6,18 +6,24 @@ import com.sukumar.bookmyshow.dto.User;
 
 class AccountModel {
     AccountView view;
+
     AccountModel(AccountView view){
         this.view = view;
     }
 
-    void addAccount(Account account, String userName){
-
-        User user = BookMyShowRepository.getInstance().getUser(userName);
-        if(user.getAccount() == null){
-           view.onSuccessAddAccount(userName);
+    void addAccount(Account account, String name) {
+        BookMyShowRepository repository = BookMyShowRepository.getInstance();
+        if(name.equals(repository.getAdminName())){
+            repository.setAccount(account,name);
+            view.onSuccessAdminAccount();
         }else{
-            view.onFailedAddAccount(userName);
+            User user = BookMyShowRepository.getInstance().getUser(name);
+            if(user.getAccount() == null){
+                repository.setAccount(account,name);
+               view.onSuccessAddAccount(name);
+            }else{
+                view.onFailedAddAccount(name);
+            }
         }
     }
-
 }

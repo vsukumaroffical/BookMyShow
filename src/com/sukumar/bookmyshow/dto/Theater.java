@@ -1,5 +1,6 @@
 package com.sukumar.bookmyshow.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Theater {
@@ -7,6 +8,9 @@ public class Theater {
     private String theaterName;
     private List<Screen> screenList;
 
+    public Theater(){
+        screenList = new ArrayList<>();
+    }
     public int getTheaterId() {
         return theaterId;
     }
@@ -30,4 +34,22 @@ public class Theater {
     public void setScreenList(List<Screen> screenList) {
         this.screenList = screenList;
     }
+    public boolean containsScreen(String name){
+        for (Screen screen : screenList){
+            if(screen.getScreenName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public Screen getScreen(String name){
+        for(Screen screen :screenList){
+            if(screen.getScreenName().equals(name)){
+                return screen;
+            }
+        }
+        return  null;
+    }
+
+
 }

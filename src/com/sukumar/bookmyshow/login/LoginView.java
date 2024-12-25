@@ -1,7 +1,7 @@
 package com.sukumar.bookmyshow.login;
 
 import com.sukumar.bookmyshow.adminlogin.AdminLoginView;
-import com.sukumar.bookmyshow.registor.RegisterView;
+import com.sukumar.bookmyshow.register.RegisterView;
 import com.sukumar.bookmyshow.userlogin.UserLoginView;
 import com.sukumar.bookmyshow.util.ScannerUtil;
 
@@ -47,7 +47,7 @@ public class LoginView {
         }
 
         private void handleUserLogin() {
-            new UserLoginView().getUserInfo();
+//            new UserLoginView(userName).getUserInfo();
         }
 
         private void handleUserRegistration() {

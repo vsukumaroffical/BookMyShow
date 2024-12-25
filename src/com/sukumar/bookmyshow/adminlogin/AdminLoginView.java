@@ -1,5 +1,6 @@
 package com.sukumar.bookmyshow.adminlogin;
 
+import com.sukumar.bookmyshow.adminconsole.AdminConsoleView;
 import com.sukumar.bookmyshow.theatersetup.TheaterSetupView;
 import com.sukumar.bookmyshow.util.ScannerUtil;
 
@@ -27,6 +28,8 @@ public class AdminLoginView {
 
     public void onSuccessLogin() {
         System.out.println("Login success!");
-        new TheaterSetupView().init();
+        new AdminConsoleView().start();
+//        new TheaterSetupView().init();
     }
+
 }

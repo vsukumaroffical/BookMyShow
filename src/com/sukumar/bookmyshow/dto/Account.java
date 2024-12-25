@@ -4,6 +4,7 @@ public class Account {
     private String accountNo;
     private String accountHolderName;
     private String bankName;
+    private double balance;
 
     public String getAccountNo() {
         return accountNo;
@@ -27,6 +28,10 @@ public class Account {
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
 
